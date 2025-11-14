@@ -1,11 +1,11 @@
+[variables]
+PYTHON_VERSION = "3.10.12"
+
 [phases.setup]
-nixPkgs = ['python310']
+nixPkgs = ["python310", "pip"]
 
 [phases.install]
-cmds = ['pip install -r requirements.txt']
-
-[phases.build]
-cmds = ['echo "Build complete"']
+cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
 
 [start]
-cmd = 'python bot.py'
+cmd = "python bot.py"
